@@ -5,12 +5,12 @@ This repo serves as a log of my curiosity.
 
 This repository contains my ML projects, showcasing my work and learning journey in the field of machine learning. Each project is organized in its own subfolder. Below is an overview of the projects I have completed, including key details such as the project name, algorithms used, completion date, and more.
 
-| Project Type | Title | Description | Methods | Algorithms Used | Status | Completion Date | Key Achievements |
-|--------------|-------|-------------|---------|-----------------|--------|-----------------|------------------|
-| School (Group) | How does changes in Fuel Prices influence Public Train Ridership in Singapore? | Investigate if fuel price fluctuations affect public train ridership. | EDA, End-to-end ML pipeline | Time Series Decomposition, Random Forest | Completed | Apr 2024 | Grade: A |
-| School | Is it possible to optimize a Tesco Store's inventory by modeling the relationship between property type and buying behaviors of its residents? | Analyze Tesco grocery data and London property data to identify buying patterns. | EDA, End-to-end ML pipeline | Multi-label Regression by aggregating multiple RF models | Completed | Mar 2024 | Grade: A |
-| School | What is the Best Chess Opening? | EDA on Kaggle chess dataset to find the opening with the highest win-rate. | EDA | nil | Completed | Feb 2024 | Grade: A |
-| Kaggle (Intro) | Titanic - Machine Learning from Disaster | Create a model that predicts which passengers survived the Titanic shipwreck. | EDA, End-to-end ML pipeline | SVM, KNN, Decision Trees, Random Forest | Completed | Jan 2024 | Nil, Practice Notebook |
+| Project Type   | Title | Description | Methods | Algorithms Used | Completion Date | Key Achievements |
+|----------------|-------|-------------|---------|-----------------|-----------------|------------------|
+| School (Group) | How does changes in Fuel Prices influence Public Train Ridership in Singapore? | Investigate if fuel price fluctuations affect public train ridership. | EDA, End-to-end ML pipeline | Time Series Decomposition, Random Forest | Apr 2024 | Grade: A |
+| School         | Is it possible to optimize a Tesco Store's inventory by modeling the relationship between property type and buying behaviors of its residents? | Analyze Tesco grocery data and London property data to identify buying patterns. | EDA, End-to-end ML pipeline | Multi-label Regression by aggregating multiple RF models | Mar 2024 | Grade: A |
+| School         | What is the Best Chess Opening? | EDA on Kaggle chess dataset to find the opening with the highest win-rate. | EDA | nil | Feb 2024 | Grade: A |
+| Kaggle (Intro) | Titanic - Machine Learning from Disaster | Create a model that predicts which passengers survived the Titanic shipwreck. | EDA, End-to-end ML pipeline | SVM, KNN, Decision Trees, Random Forest | Jan 2024 | Nil, Practice Notebook |
 
 ## Detailed Project Descriptions
 
