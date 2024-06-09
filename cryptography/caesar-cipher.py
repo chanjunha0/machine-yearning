@@ -7,6 +7,12 @@ Algorithm for Caesar Cipher
 - Based on transposition of alphabets
 - Encrypt and decrypt based on the shift by transposition
 
+Advantages
+- Efficient, linear time complexity of O(n)
+
+Disadvantages
+- Easily broken (only 25 possible shifts)
+
 """
 
 
