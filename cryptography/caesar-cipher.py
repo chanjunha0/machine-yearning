@@ -57,7 +57,7 @@ def caesar_cipher_decrypt(encrpyted_text: str, shift: int) -> str:
     """
     result = ""
 
-    for cchar in encrpyted_text:
+    for char in encrpyted_text:
         if char.isupper():
             # "A" is 65 in ASCII
             result += chr((ord(char) - shift - 65) % 26 + 65)
@@ -72,9 +72,10 @@ def caesar_cipher_decrypt(encrpyted_text: str, shift: int) -> str:
 
 
 # Example
-text = "She's really pretty!"
-shift = 3
+text = "That girl is really pretty!"
+shift = 5
 encrypted_text = caesar_cipher_encrypt(text, shift)
+
 
 print("Original Text: " + text)
 print("Encrypted Text: " + encrypted_text)
