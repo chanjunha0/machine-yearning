@@ -27,21 +27,21 @@ def caesar_cipher_encrypt(text: str, shift: int) -> str:
     Returns:
         result (str): Encrypted text
     """
-    result = ""
+    encrypted_text = []
 
     for char in text:
         if char.isupper():
             # "A" is 65 in ASCII
             # Note modulo %26 is for the wrapping around the alphabet in the event the character + shift exceeds the 26 range of the alphabet.
-            result += chr((ord(char) + shift - 65) % 26 + 65)
+            encrypted_char = chr((ord(char) + shift - 65) % 26 + 65)
         elif char.islower():
             # "a" is 97 in ASCII
-            result += chr((ord(char) + shift - 97) % 26 + 97)
+            encrypted_char = chr((ord(char) + shift - 97) % 26 + 97)
         # not alphabetic character
         else:
-            result += char
-
-    return result
+            encrypted_char = char
+        encrypted_text.append(encrypted_char)
+    return "".join(encrypted_text)
 
 
 def caesar_cipher_decrypt(encrpyted_text: str, shift: int) -> str:
@@ -55,28 +55,28 @@ def caesar_cipher_decrypt(encrpyted_text: str, shift: int) -> str:
     Returns:
         result (str): Decrypted text
     """
-    result = ""
+    decrypted_text = []
 
     for char in encrpyted_text:
         if char.isupper():
             # "A" is 65 in ASCII
-            result += chr((ord(char) - shift - 65) % 26 + 65)
+            decrypted_char = chr((ord(char) - shift - 65) % 26 + 65)
         elif char.islower():
             # "a" is 97 in ASCII
-            result += chr((ord(char) - shift - 97) % 26 + 97)
+            decrypted_char = chr((ord(char) - shift - 97) % 26 + 97)
         # not alphabetic character
         else:
-            result += char
-
-    return result
+            decrypted_char = char
+        decrypted_text.append(decrypted_char)
+    return "".join(decrypted_text)
 
 
 # Example
 text = "That girl is really pretty!"
 shift = 5
 encrypted_text = caesar_cipher_encrypt(text, shift)
-
+decrypted_text = caesar_cipher_decrypt(encrypted_text, shift)
 
 print("Original Text: " + text)
 print("Encrypted Text: " + encrypted_text)
-print("Decrypted Text: " + caesar_cipher_decrypt(encrypted_text, shift))
+print("Decrypted Text: " + decrypted_text)
