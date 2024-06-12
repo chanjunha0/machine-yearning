@@ -4,9 +4,11 @@ Welcome to the Cryptography repository! This repository logs my explorations, cu
 
 ## Summary Table of Explored Algorithms and Ciphers
 
-| Name                | Cipher Family | Logic                | Description                                 |Method| Date Explored |
-|---------------------|---------------|----------------------|---------------------------------------------| ---| ---|
-| Caesar Cipher    | Symmetric     | Substitution         | A basic substitution cipher for encryption. | Shift by n characters | June 2024 |
+| Name            | Cipher Family | Logic          | Description                                                      | Method                        | Date Explored |
+|-----------------|---------------|----------------|------------------------------------------------------------------|-------------------------------|---------------|
+| Caesar Cipher   | Symmetric     | Substitution   | A basic substitution cipher for encryption.                       | Shift by n characters         | June 2024     |
+| Atbash Cipher   | Symmetric     | Substitution   | A substitution cipher that maps each letter to its reverse.       | Map each letter to its reverse | June 2024     |
+
 
 ## Contributions
 Contributions are welcome! If you have any suggestions, improvements, or new ciphers/algorithms to add, please feel free to open a pull request or raise an issue.
