@@ -9,6 +9,8 @@ Welcome to the Cryptography repository! This repository logs my explorations, cu
 | Caesar Cipher   | Symmetric     | Substitution   | A basic substitution cipher for encryption.                       | Shift by n characters         |
 | Atbash Cipher   | Symmetric     | Substitution   | A substitution cipher that maps each letter to its reverse.       | Map each letter to its reverse|
 | ROT13 Cipher    | Symmetric     | Substitution   | A special case of the Caesar cipher, replacing each letter with the letter 13 positions after it. | Shift by 13 characters        |
+| Jefferson Disk  | Symmetric     | Substitution   | Uses a set of rotating disks, each with a scrambled alphabet, to encrypt and decrypt messages. | Align disks and read off different rows |
+
 
 
 
