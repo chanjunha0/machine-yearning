@@ -20,6 +20,8 @@ def atbash_cipher(text: str) -> str:
     """
     Encrypts or decrypts a given input using the Atbash Cipher.
 
+    Encrypt and decrypt by mapping each letter to its reverse.
+
     Args:
         text (str): The text to encrypt or decrypt.
 
