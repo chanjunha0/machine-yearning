@@ -1,9 +1,11 @@
 """
-The following script below is the implementation of the Logistic Regression Model from scratch.
+Description:
+Implementation of the Logistic Regression Model from scratch.
 
-The purpose is for the author to understand the inner workings of the algorithm.
+Objective:
+For the author to understand the inner workings of the algorithm.
 
-Overall Logic:
+Algorithm Logic:
 1.
 """
 
@@ -27,11 +29,19 @@ class LogisticRegression:
         bias = 0
         return weights, bias
 
-    def sigmoid(z):
+    def sigmoid(self, z):
         """
-        Refer to sigmoid function script for explaination.
+        Compute the sigmoid of z.
+
+        Refer to sigmoid function script for detailed explaination.
+
+        Args:
+            z: A scalar or numpy array of any size.
+
+        Returns
+            s: sigmoid(z)
         """
         return 1 / (1 + np.exp(-z))
 
-    def propogate(w, b, X, Y):
+    def propogate(self, weights, bias, X, Y):
         pass
