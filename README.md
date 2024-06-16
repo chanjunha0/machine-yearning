@@ -1,47 +1,19 @@
-This repo serves as a log of my curiosity.
-<br>
-<br>
-## Projects Portfolio
+# Machine Yearning
 
-This repository contains my ML projects, showcasing my work and learning journey in the field of machine learning. Each project is organized in its own subfolder. Below is an overview of the projects I have completed, including key details such as the project name, algorithms used, completion date, and more.
+This repo serves as a log of my curiosity. 
 
-| Project Type   | Title                                                                                  | Description                                                                                     | Methods                     | Algorithms Used           | Completion Date | Key Achievements |
-|----------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------|---------------------------|-----------------|------------------|
-| Thesis         | A Rapid Prediction Model for Urban Building Facade Solar Radiation using Graph Neural Networks | Design and implement a pipeline that runs climatic simulations and uses the data to train a GNN model for rapid inference. | Data Processing Pipeline, End-to-end ML pipeline | Graph Neural Networks | Apr 2024        | Grade: A         |
-| School (Group) | How does changes in Fuel Prices influence Public Train Ridership in Singapore?          | Investigate if fuel price fluctuations affect public train ridership.                           | EDA, End-to-end ML pipeline | Time Series Decomposition, Random Forest | Apr 2024        | Grade: A         |
-| School         | Is it possible to optimize a Tesco Store's inventory by modeling the relationship between property type and buying behaviors of its residents? | Analyze Tesco grocery data and London property data to identify buying patterns. | EDA, End-to-end ML pipeline | Multi-label Regression by aggregating multiple RF models | Mar 2024        | Grade: A         |
-| School         | What is the Best Chess Opening?                                                        | EDA on Kaggle chess dataset to find the opening with the highest win-rate.                      | EDA                        | nil                       | Feb 2024        | Grade: A         |
-| Kaggle (Intro) | Titanic - Machine Learning from Disaster                                               | Create a model that predicts which passengers survived the Titanic shipwreck.                   | EDA, End-to-end ML pipeline | SVM, KNN, Decision Trees, Random Forest | Jan 2024        | Nil, Practice Notebook |
+Here, you will find my explorations, projects, and learnings across various domains, including algorithms, machine learning, data analysis, and cryptography. Each folder is dedicated to a specific area, containing detailed documentation, explanations, and implementations of the concepts and techniques I've studied.
 
+## Repository Structure
 
-## Detailed Project Descriptions
+### Algorithms
+Logs my explorations and learnings in the domain of algorithms. Includes various algorithms and key functions with detailed explanations and implementations.
 
+### Projects
+Contains various projects covering different techniques used in machine learning and data analysis. Each project includes detailed notebooks, scripts, and additional documentation.
 
-### A Rapid Prediction Model for Urban Building Facade Solar Radiation using Graph Neural Networks
-- Address the challenges posed by the Urban Heat Island (UHI) warming effect in Singapore.
-- The goal is to architect a new solution for climatic simulations that is more accurate and efficient.
-- The methodology involves utilsing graph neural networks (GNNs) as a model to interpret BREP structures as graph data, allowing for rapid and accurate solar radiation simulations.
-<br>
+### Cryptography
+Logs my explorations and learnings in the domain of cryptography. Features various cryptographic algorithms and ciphers with detailed explanations and implementations.
 
-### How does changes in Fuel Prices influence Public Train Ridership in Singapore?
-- Investigate if fluctuations in fuel prices affect public train ridership in Singapore.
-- EDA on data from Land Transport Authority's Datamall API and Singstat.gov.
-- Generate a model to understand current usage patterns and serve as a forecasting tool for transport operators.
-- Potentially guide future infrastructure developments and service enhancements.
-<br>
-
-### Is it possible to optimize a Tesco Store's inventory by modeling the relationship between property type and buying behaviors of its residents?
-- Analyze Tesco grocery data and London’s property data to identify patterns and trends.
-- Use machine learning techniques to predict food categories purchased based on property distribution.
-- Test feasibility of developing a model for inventory optimization based on district property types.
-<br>
-
-### What is the Best Chess Opening?
-- EDA on Kaggle chess dataset to find the opening with the highest win-rate.
-<br>
-
-### Titanic - Machine Learning from Disaster
-- Create a model that predicts which passengers survived the Titanic shipwreck.
-
-<br>
-Feel free to explore each subfolder for detailed notebooks, scripts, and additional documentation related to each project.
+## Contributions
+Contributions are welcome! If you have any suggestions, improvements, or new algorithms/ciphers/projects to add, please feel free to open a pull request or raise an issue.
