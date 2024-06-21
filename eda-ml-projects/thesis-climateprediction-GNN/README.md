@@ -61,10 +61,11 @@ Defines the model architectures used in the project. For example, it includes a 
 Contains utility functions used across different scripts, such as loading configuration files.
 
 ## Data
-The example data used to execute this pipeline can be downloaded from the following links:
-https://drive.google.com/drive/folders/16JFZfTpWTcYRpeOXEP0ilPYCk_d2kaY6?usp=sharing
+The example data used to execute this pipeline can be downloaded from the following links. Place them in the folder `data`:
+1. https://drive.google.com/drive/folders/16JFZfTpWTcYRpeOXEP0ilPYCk_d2kaY6?usp=sharing
+2. https://drive.google.com/drive/folders/1T1vCJtHAmh29IWMf-PJp_V5pUw-KsbW8?usp=sharing
 
-Place them in the folder `data`
+
 
 ## How to Run
 
