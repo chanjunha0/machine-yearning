@@ -117,3 +117,21 @@ Install the dependencies using:
 ```
 pip install -r requirements.txt
 ```
+
+
+## Docker Setup
+
+To run this project using Docker, follow the steps below:
+
+### 1. Ensure you have Docker and Docker Compose installed.
+
+- [Docker Installation Instructions](https://docs.docker.com/get-docker/)
+- [Docker Compose Installation Instructions](https://docs.docker.com/compose/install/)
+
+### 2. Build and run the Docker container:
+
+Use the following command in your terminal to build and run the Docker container:
+
+```sh
+docker-compose up --build
+```
