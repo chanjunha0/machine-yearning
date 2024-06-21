@@ -1,68 +1,72 @@
-import json
 import pandas as pd
 import numpy as np
-from sklearn.metrics import mean_absolute_error, r2_score
+from sklearn.metrics import mean_absolute_error
+import logging
+from utils import load_config
+import os
 
-# Load configuration from config.json
-with open("config.json", "r") as config_file:
-    config = json.load(config_file)
 
-evaluation_config = config["evaluation"]
-model_name = evaluation_config["model_name"]
-start_run = evaluation_config["start_run"]
-end_run = evaluation_config["end_run"]
+def evaluate_model_performance(
+    config_path: str, data_dir: str, output_dir: str
+) -> pd.DataFrame:
+    """
+    Evaluates the model performance by calculating MAE, RMSE, and R2 metrics for each run
+    and returns a DataFrame with the results.
 
-runs = [f"run_{i}" for i in range(start_run, end_run + 1)]
+    Args:
+        config_path (str): The file path to the JSON configuration file.
+        data_dir (str): The directory containing the actual and predicted labels.
+        output_dir (str): The directory where the performance metrics CSV file will be saved.
 
-# Initialize a DataFrame to store results
-results_df = pd.DataFrame(columns=["Run", "MAE", "RMSE", "R2"])
+    Returns:
+        pd.DataFrame: A DataFrame containing the performance metrics for each run and the average metrics.
 
-for run_num in runs:
-    # Actual simulated labels
-    label_actual_df = pd.read_csv(
-        f"data/2_prediction_testing/actual_label_{run_num}.csv", header=None
+    Raises:
+        FileNotFoundError: If any of the CSV files are not found.
+        json.JSONDecodeError: If there is an error parsing the JSON file.
+    """
+    config = load_config(config_path)
+
+    evaluation_config = config["evaluation"]
+    model_name = evaluation_config["model_name"]
+    start_run = evaluation_config["start_run"]
+    end_run = evaluation_config["end_run"]
+
+    runs = [f"run_{i}" for i in range(start_run, end_run + 1)]
+
+    results_df = pd.DataFrame(columns=["Run", "MAE"])
+
+    for run_num in runs:
+        actual_label_path = os.path.join(data_dir, f"actual_label_{run_num}.csv")
+        predicted_label_path = os.path.join(
+            data_dir, f"{model_name}_predictions_{run_num}.csv"
+        )
+
+        try:
+            label_actual_df = pd.read_csv(actual_label_path, header=None)
+            label_predict_df = pd.read_csv(predicted_label_path, header=None)
+        except FileNotFoundError as e:
+            logging.error(f"File not found: {e}")
+            raise
+
+        actual_values = label_actual_df.iloc[:, 0]
+        predicted_values = label_predict_df.iloc[:, 0]
+
+        mae = mean_absolute_error(actual_values, predicted_values)
+
+        new_row = pd.DataFrame({"Run": [run_num], "MAE": [mae]})
+        results_df = pd.concat([results_df, new_row], ignore_index=True)
+
+    avg_metrics = results_df.mean(numeric_only=True)
+    avg_row = pd.DataFrame({"Run": ["Average"], "MAE": [avg_metrics["MAE"]]})
+
+    results_df = pd.concat([results_df, avg_row], ignore_index=True)
+
+    print(results_df)
+
+    performance_file_path = os.path.join(
+        output_dir, f"model_performance_metrics_{model_name}.csv"
     )
-    # Predicted labels
-    label_predict_df = pd.read_csv(
-        f"data/2_prediction_testing/{model_name}_predictions_{run_num}.csv", header=None
-    )
+    results_df.to_csv(performance_file_path, index=False)
 
-    actual_values = label_actual_df.iloc[:, 0]
-    predicted_values = label_predict_df.iloc[:, 0]
-
-    # Calculate MAE
-    mae = mean_absolute_error(actual_values, predicted_values)
-
-    # Calculate RMSE
-    rmse_value = np.sqrt(((predicted_values - actual_values) ** 2).mean())
-
-    # Calculate R2
-    r2 = r2_score(actual_values, predicted_values)
-
-    # Append results to DataFrame
-    new_row = pd.DataFrame(
-        {"Run": [run_num], "MAE": [mae], "RMSE": [rmse_value], "R2": [r2]}
-    )
-    results_df = pd.concat([results_df, new_row], ignore_index=True)
-
-
-# Calculate averages of each metric
-avg_metrics = results_df.mean(numeric_only=True)
-
-# Creating a new row with these averages
-avg_row = pd.DataFrame(
-    {
-        "Run": ["Average"],
-        "MAE": [avg_metrics["MAE"]],
-        "RMSE": [avg_metrics["RMSE"]],
-        "R2": [avg_metrics["R2"]],
-    }
-)
-
-# Append the average row to the DataFrame
-results_df = pd.concat([results_df, avg_row], ignore_index=True)
-
-print(results_df)
-
-# Save to CSV
-results_df.to_csv(f"model_performance_metrics_{model_name}.csv", index=False)
+    return results_df

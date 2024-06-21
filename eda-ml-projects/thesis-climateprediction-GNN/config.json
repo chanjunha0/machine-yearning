@@ -1,4 +1,10 @@
 {
+    "run_parameters": {
+        "data_processing": true,
+        "model_training": false,
+        "model_prediction": false,
+        "model_evaluation": false
+    },
     "data_processing": {
         "file_names": [
             "building_alum_vertex",
@@ -62,6 +68,16 @@
             "rough",
             "type_flag"
         ]
+    },
+    "training": {
+        "folder_path": "data",
+        "labels_info_path": "data/labels_info_training.csv",
+        "model_path": "data/model.pth",
+        "losses_file_path": "data/training_and_test_losses.csv",
+        "total_objects": 360,
+        "num_epochs": 50,
+        "learning_rate": 0.01,
+        "weight_decay": 0.01
     },
     "evaluation": {
         "model_name": "model_360_50",
