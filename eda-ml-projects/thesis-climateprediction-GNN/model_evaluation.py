@@ -1,9 +1,10 @@
-import pandas as pd
-import numpy as np
-from sklearn.metrics import mean_absolute_error
 import logging
-from utils import load_config
 import os
+
+import pandas as pd
+from sklearn.metrics import mean_absolute_error
+
+from utils import load_config
 
 
 def evaluate_model_performance(

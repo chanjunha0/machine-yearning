@@ -1,11 +1,13 @@
+import logging
 import os
+from typing import Any, Dict, List
+
+import numpy as np
 import pandas as pd
 import torch
 from torch_geometric.data import Data
-import numpy as np
+
 from utils import load_config
-import logging
-from typing import Any, Dict, List
 
 
 def process_run(
