@@ -65,6 +65,25 @@ The solar radiation data generated from the environmental simulations and  used 
 1. https://drive.google.com/drive/folders/16JFZfTpWTcYRpeOXEP0ilPYCk_d2kaY6?usp=sharing
 2. https://drive.google.com/drive/folders/1T1vCJtHAmh29IWMf-PJp_V5pUw-KsbW8?usp=sharing
 
+## Grasshopper Simulation Methodology
+
+### Overall Script Logic
+1. Import 3D model context of urban town.
+2. Modify the urban context by height, rotation, and translation.
+3. Apply material modifiers: concrete, wood, glass.
+4. Run Radiance simulation for a grid size of 5m.
+5. Export features from simulations:
+
+| Feature                     | Description                          |
+|-----------------------------|--------------------------------------|
+| XYZ sensor coordinates      | Coordinates of each sensor           |
+| Sensor length               | Length of each sensor                |
+| Building vertex coordinates | Coordinates of each building vertex  |
+| Vertex length               | Length of each vertex                |
+| Sensor to vertex distance   | Distance from sensor to vertex       |
+| Embedded material properties| Properties of materials used         |
+| Normal vector of sensor     | Normal vector direction of sensor    |
+| Angle to north vector       | Angle between sensor and north vector|
 
 
 ## How to Run
