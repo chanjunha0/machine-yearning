@@ -4,11 +4,13 @@
 
 Welcome to the **24 Hour Projects** repository! This repository is dedicated to housing various projects that I complete by following quick tutorials available online. 
 
-**The primary objective is to learn new concepts and skills rapidly, with each project being strictly limited to a maximum duration of 24 hours.**
+## Objective
+- Grasp new concepts and skills quickly
+- Focus on breadth 
+- Helps in building a broad base of knowledge quickly and effectively.
 
-The idea behind this approach is to focus on **grasping the core concepts** and getting hands-on experience with new technologies, frameworks, or methodologies without getting bogged down in details. 
-
-This helps in building a broad base of knowledge quickly and effectively.
+## Rules
+- Each project limited to a maximum of 24 hours
 
 ## Table of Projects (UPDATE LATER)
 
