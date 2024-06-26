@@ -12,15 +12,11 @@ Welcome to the **24 Hour Projects** repository! This repository is dedicated to 
 ## Rules
 - Each project limited to a maximum of 24 hours
 
-## Table of Projects (UPDATE LATER)
+## Table of Projects
 
-| Project Name | Topic             | Description                                                     | Link to Tutorial |
-|--------------|-------------------|-----------------------------------------------------------------|------------------|
-| Project 1    | Web Scraping      | A simple web scraper using BeautifulSoup and requests library   | [Tutorial Link](#) |
-| Project 2    | Data Analysis     | Analyzing a dataset using pandas and visualizing with matplotlib | [Tutorial Link](#) |
-| Project 3    | Machine Learning  | Building a basic machine learning model with scikit-learn       | [Tutorial Link](#) |
-| Project 4    | Web Development   | Creating a basic web application using Flask                    | [Tutorial Link](#) |
-| Project 5    | Automation        | Automating a repetitive task using Python and Selenium          | [Tutorial Link](#) |
+| Project Name |Type |Topic             |Description                                                     | 
+|--------------|-|-------------------|-----------------------------------------------------------------|
+| Book Recommendation    |Machine Learning Algorithm (Recommendation)| Popularity & Colloborative Filtering     | Recommend books to new users based on popularity or collobrative filtering.   | 
 
 ## Project Directory
 
