@@ -28,9 +28,6 @@ def sigmoid(z):
             If z is very large, sigmoid(z) approaches 1.
             If z is very small (negative), sigmoid(z) approaches 0.
 
-        Reference Links:
-            - https://www.sciencedirect.com/topics/computer-science/sigmoid-function#:~:text=The%20sigmoid%20function%20transforms%20the,the%20weight%20is%20more%20stable.
-
     Additional Notes:
         - One of the most commonly used activation functions
     """

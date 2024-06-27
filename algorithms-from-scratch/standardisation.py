@@ -33,6 +33,9 @@ def standardize_column(column):
         >>> standardized_column
         array([-1.22474487,  0.        ,  1.22474487])
 
+    References:
+        - https://www.analyticsvidhya.com/blog/2022/02/implementing-logistic-regression-from-scratch-using-python/
+
     Additional Notes:
         - Standardization is often a preprocessing step for machine learning algorithms.
     """

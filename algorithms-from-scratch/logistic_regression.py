@@ -7,41 +7,47 @@ For the author to understand the inner workings of the algorithm.
 
 Algorithm Logic:
 1.
+
+Reference Materials:
+https://www.analyticsvidhya.com/blog/2022/02/implementing-logistic-regression-from-scratch-using-python/
+https://www.youtube.com/watch?v=YYEJ_GUguHw
 """
 
 import numpy as np
 from typing import Tuple
+from sigmoid_function import sigmoid
+from standardisation import standardize_column
+
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
 
 
 class LogisticRegression:
-    def initialize_parameters(dim: int) -> Tuple[np.ndarray, float]:
-        """
-        Initializes the parameters (weight and bias) for logistic regression.
+    """
+    1. Initialize weights as zero
+    2. Initialize bias as zero
+    3. For each data point
+    4. Predict probability using sigmoid function
+    5. Calculate error
+    6. Use gradient descent to figure out new weight and bias
+    7. Repeat n times
+    """
 
-        Args:
-            dim (int): The number of features in the input data.
+    def __init__(self, learning_rate: float = 0.01, num_iterations: int = 1000):
+        self.learning_rate = learning_rate
+        self.num_iterations = num_iterations
+        self.weights = None
+        self.bias = None
 
-        Returns:
-            weights (numpy.ndarray): A column vector of shape (dim,1) initialized to zeros.
-            bias (float): The bias term initialized to zero. (Y Intercept)
-        """
-        weights = np.zeros((dim, 1))
-        bias = 0
-        return weights, bias
+    def fit(self, X, y):
+        n_samples, n_features = X.shape
+        self.weights = np.zeroes(self.features)
+        self.bias = 0
 
-    def sigmoid(self, z):
-        """
-        Compute the sigmoid of z.
+        for _ in range(self.num_iterations):
+            linear_predictions = np.dot(X, self.weights) + self.bias
+            predictions = sigmoid(linear_predictions)
 
-        Refer to sigmoid function script for detailed explaination.
-
-        Args:
-            z: A scalar or numpy array of any size.
-
-        Returns
-            s: sigmoid(z)
-        """
-        return 1 / (1 + np.exp(-z))
-
-    def propogate(self, weights, bias, X, Y):
+    def predict():
         pass
