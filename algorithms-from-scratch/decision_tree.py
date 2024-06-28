@@ -2,6 +2,40 @@ from typing import List, Tuple
 import numpy as np
 
 
+class Node:
+    def __init__(self, feature=None, threshold=None, left=None, right=None, value=None):
+        """
+        Initialise a node in the decision tree.
+
+        Args:
+            feature (int, optional): The index of the feature used for splitting at this node.
+            threshold (float, optional): The threshold value for the split.
+            left (Node, optional): The left child node.
+            right (Node, optional): The right child node.
+            value (Any, optional): The predicted value if this is a leaf node.
+
+        If 'value' is set, this node is a leaf node.
+        If 'feature' and 'threshold' are set, this is an internal node.
+        """
+        self.feature = feature
+        self.threshold = threshold
+        self.left = left
+        self.right = right
+        self.value = value
+
+    def is_leaf_node(self):
+        """
+        Check if the current node is a leaf node.
+
+        Returns:
+            bool: True if this is a leaf node, False otherwise
+
+        A node is considered a leaf if it has a value assigned to it,
+        which represents the prediction for samples that reach this node.
+        """
+        return self.value is not None
+
+
 class DecisionTree:
     """
     This class implements a decision tree classifier from scratch.
@@ -203,36 +237,31 @@ class DecisionTree:
         counts = np.bincount(y)
         return np.argmax(counts)
 
-
-class Node:
-    def __init__(self, feature=None, threshold=None, left=None, right=None, value=None):
+    def predict(self, X: np.ndarray) -> np.ndarray:
         """
-        Initialise a node in the decision tree.
+        Predict class labels for samples in X.
 
         Args:
-            feature (int, optional): The index of the feature used for splitting at this node.
-            threshold (float, optional): The threshold value for the split.
-            left (Node, optional): The left child node.
-            right (Node, optional): The right child node.
-            value (Any, optional): The predicted value if this is a leaf node.
-
-        If 'value' is set, this node is a leaf node.
-        If 'feature' and 'threshold' are set, this is an internal node.
+            X (np.ndarray): 2D array of shape (n_samples, n_features)
+        Returns:
+            np.ndarray: Predicted class labels
         """
-        self.feature = feature
-        self.threshold = threshold
-        self.left = left
-        self.right = right
-        self.value = value
+        return np.array([self._traverse_tree(x, self.tree) for x in X])
 
-    def is_leaf_node(self):
+    def _traverse_tree(self, x: np.ndarray, node: Node) -> int:
         """
-        Check if the current node is a leaf node.
+        Traverse the tree to make a prediction for a single sample.
+
+        Args:
+            x (np.ndarray): 1D array of shape (n_features,) representing a single sample
+            node (Node): The current node in the decision tree
 
         Returns:
-            bool: True if this is a leaf node, False otherwise
-
-        A node is considered a leaf if it has a value assigned to it,
-        which represents the prediction for samples that reach this node.
+            int: Predicted class label
         """
-        return self.value is not None
+        if node.is_leaf_node():
+            return node.value
+
+        if x[node.feature] <= node.threshold:
+            return self._traverse_tree(x, node.left)
+        return self._traverse_tree(x, node.right)
