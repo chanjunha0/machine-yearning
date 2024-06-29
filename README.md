@@ -6,14 +6,17 @@ Here, you will find my explorations, projects, and learnings across various doma
 
 ## Repository Structure
 
-### Algorithms
-Logs my explorations and learnings in the domain of algorithms. Includes various algorithms and key functions with detailed explanations and implementations.
+### 24 Hour Projects
+Logs projects completed within a 24 hour timeframe with the goal of quickly grasping new concepts, prioritising breadth. 
 
-### Projects
-Contains various projects covering different techniques used in machine learning and data analysis. Each project includes detailed notebooks, scripts, and additional documentation.
+### Algorithms From Scratch
+Logs my explorations and learnings in the domain of algorithms. Includes various algorithms and key functions with detailed explanations and implementations.
 
 ### Cryptography
 Logs my explorations and learnings in the domain of cryptography. Features various cryptographic algorithms and ciphers with detailed explanations and implementations.
+
+### Projects
+Contains various projects covering different techniques used in machine learning and data analysis. Each project includes detailed notebooks, scripts, and additional documentation.
 
 ## Contributions
 Contributions are welcome! If you have any suggestions, improvements, or new algorithms/ciphers/projects to add, please feel free to open a pull request or raise an issue.
