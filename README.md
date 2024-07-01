@@ -15,6 +15,9 @@ Logs my explorations and learnings in the domain of algorithms. Includes various
 ### Cryptography
 Logs my explorations and learnings in the domain of cryptography. Features various cryptographic algorithms and ciphers with detailed explanations and implementations.
 
+### Mathematical Derivations
+Contains derivations for various mathematical formulas discovered in machine learning. 
+
 ### Projects
 Contains various projects covering different techniques used in machine learning and data analysis. Each project includes detailed notebooks, scripts, and additional documentation.
 
