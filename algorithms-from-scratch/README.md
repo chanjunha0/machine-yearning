@@ -13,11 +13,3 @@ Welcome to the Algorithms repository! This repository logs my explorations, curi
 | Sigmoid Function         | Mathematical Function | Transformation        | A function that maps any real-valued number to the range (0, 1). Used in logistic regression and neural networks. | Mathematical Formula  | No                    |
 | Sum of Squared Residuals | Statistical Measure   | Error Measurement     | A measure of the discrepancy between the observed data and the values predicted by a model. | Residual Calculation  | No                    |
 | Standardize Column       | Data Preprocessing    | Normalization         | Standardizes the column of a given dataset to have a mean of 0 and a standard deviation of 1. | Feature Scaling       | Yes                   |
-
-
-
-
-
-
-## Contributions
-Contributions are welcome! If you have any suggestions, improvements, or new algorithms to add, please feel free to open a pull request or raise an issue.

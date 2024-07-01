@@ -1,5 +1,5 @@
-from typing import List, Tuple
 import numpy as np
+from typing import List, Tuple
 
 
 class Node:
@@ -172,8 +172,10 @@ class DecisionTree:
         best_feature, best_threshold = None, None
 
         for feature in range(num_features):
+
             # Extract all unique values from the specified feature column
             thresholds = np.unique(X[:, feature])
+
             # Each threshold is a candidate for splitting the data into two groups
             for threshold in thresholds:
                 left_idxs, right_idxs = self._split(X[:, feature], threshold)
