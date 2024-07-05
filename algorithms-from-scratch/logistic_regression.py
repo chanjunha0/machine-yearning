@@ -1,53 +1,65 @@
-"""
-Description:
-Implementation of the Logistic Regression Model from scratch.
-
-Objective:
-For the author to understand the inner workings of the algorithm.
-
-Algorithm Logic:
-1.
-
-Reference Materials:
-https://www.analyticsvidhya.com/blog/2022/02/implementing-logistic-regression-from-scratch-using-python/
-https://www.youtube.com/watch?v=YYEJ_GUguHw
-"""
-
 import numpy as np
-from typing import Tuple
-from sigmoid_function import sigmoid
-from standardisation import standardize_column
-
-
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+from typing import List
 
 
 class LogisticRegression:
-    """
-    1. Initialize weights as zero
-    2. Initialize bias as zero
-    3. For each data point
-    4. Predict probability using sigmoid function
-    5. Calculate error
-    6. Use gradient descent to figure out new weight and bias
-    7. Repeat n times
-    """
+    def __init__(self, learning_rate: float = 0.01, num_iterations: int = 1000) -> None:
+        """
+        Initialise the Logistic Regression model.
 
-    def __init__(self, learning_rate: float = 0.01, num_iterations: int = 1000):
+        Args:
+            learning_rate (float): The learning rate for gradient descent. Defaults to 0.01.
+            num_iterations (int): The number of iterations for training. Defaults to 1000.
+        """
         self.learning_rate = learning_rate
         self.num_iterations = num_iterations
         self.weights = None
         self.bias = None
 
-    def fit(self, X, y):
-        n_samples, n_features = X.shape
-        self.weights = np.zeroes(self.features)
+    def sigmoid(self, z: np.ndarray) -> np.ndarray:
+        """
+        Compute the sigmoid function.
+
+        Args:
+            z (np.ndarray): Input array
+
+        Returns:
+            np.ndarray: Sigmoid of the input array.
+        """
+        return 1 / (1 + np.exp(-z))
+
+    def fit(self, X: np.ndarray, y: np.ndarray) -> None:
+        """
+        Fits the logistic regression model to the training data.
+
+        Args:
+            X (np.ndarray): Training input samples.
+            y (np.ndarray): Target values.
+        """
+        num_samples, num_features = X.shape
+        self.weights = np.zeros(num_features)
         self.bias = 0
 
         for _ in range(self.num_iterations):
-            linear_predictions = np.dot(X, self.weights) + self.bias
-            predictions = sigmoid(linear_predictions)
+            linear_model = np.dot(X, self.weights) + self.bias
+            y_predicted = self.sigmoid(linear_model)
 
-    def predict():
-        pass
+            dw = (1 / num_samples) * np.dot(X.T, (y_predicted - y))
+            db = (1 / num_samples) * np.sum(y_predicted - y)
+
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
+
+    def predict(self, X: np.ndarray) -> List[int]:
+        """
+        Predict class labels for samples in X.
+
+        Args:
+            X (np.ndarray): Samples to predict.
+
+        Returns:
+            List[int]: Predicted class label for each sample.
+        """
+        linear_model = np.dot(X, self.weights) + self.bias
+        y_predicted = self.sigmoid(linear_model)
+        return [1 if i > 0.5 else 0 for i in y_predicted]

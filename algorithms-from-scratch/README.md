@@ -13,7 +13,7 @@ Welcome to the Algorithms repository! This repository logs my explorations, curi
 | Sum of Squared Residuals | Statistical Measure   | Error Measurement     | A measure of the discrepancy between the observed data and the values predicted by a model. | Residual Calculation  | No                    |
 | Standardize Column       | Data Preprocessing    | Normalization         | Standardizes the column of a given dataset to have a mean of 0 and a standard deviation of 1. | Feature Scaling       | Yes                   |
 | Standard Deviation       | Statistical Measure   | Dispersion Measurement| A measure of the amount of variation or dispersion in a set of values.       | Square Root of Variance | No                    |
-             |
+
 
 
 ## Algorithm Concept (High Level)
