@@ -2,23 +2,38 @@
 
 Welcome to the Algorithms repository! This repository logs my explorations, curiosity, and learnings in the domain of algorithms. Here, you will find various algorithms and key functions that I have studied, along with detailed explanations and implementations.
 
-## Summary Table of Explored Algorithms and Key Functions
+## Machine Learning Algorithms
 
-| Name                     | Type                  | Logic                 | Description                                                                 | Method                | Normalization Needed |
-|--------------------------|-----------------------|-----------------------|-----------------------------------------------------------------------------|-----------------------|-----------------------|
-| Decision Tree            | Machine Learning      | Recursive Partitioning| A tree-like model of decisions based on feature values, used for classification and regression. | Gini Impurity         | No                    |
-| RandomForest             | Machine Learning      | Ensemble Learning     | A collection of decision trees, typically trained with the bagging method, used for classification and regression. | Majority Voting / Averaging | No                    |
-| Logistic Regression      | Machine Learning      | Optimization          | An algorithm for binary classification using a logistic function.           | Gradient Descent      | Yes                   |
-| Sigmoid Function         | Mathematical Function | Transformation        | A function that maps any real-valued number to the range (0, 1). Used in logistic regression and neural networks. | Mathematical Formula  | No                    |
-| Sum of Squared Residuals | Statistical Measure   | Error Measurement     | A measure of the discrepancy between the observed data and the values predicted by a model. | Residual Calculation  | No                    |
-| Standardize Column       | Data Preprocessing    | Normalization         | Standardizes the column of a given dataset to have a mean of 0 and a standard deviation of 1. | Feature Scaling       | Yes                   |
-| Standard Deviation       | Statistical Measure   | Dispersion Measurement| A measure of the amount of variation or dispersion in a set of values.       | Square Root of Variance | No                    |
+| Name                | Method                      | Logic                 | Description                                                                 |
+|---------------------|-----------------------------|-----------------------|-----------------------------------------------------------------------------|
+| Decision Tree       | Gini Impurity               | Recursive Partitioning| A tree-like model of decisions based on feature values, used for classification and regression. |
+| RandomForest        | Majority Voting / Averaging | Ensemble Learning     | A collection of decision trees, typically trained with the bagging method, used for classification and regression. |
+| Logistic Regression | Gradient Descent            | Optimization          | An algorithm for binary classification using a logistic function.           |
+
+## Optimisation Algorithms
+
+| Name                        | Method            | Logic        | Description                                                                 |
+|-----------------------------|-------------------|--------------|-----------------------------------------------------------------------------|
+| Boyer-Moore Majority Voting | Voting Mechanism  | Optimisation | An algorithm to find the majority element in a sequence, optimizing by making a single pass through the data. |
+
+
+## Mathematical Functions
+| Name                     | Method                | Logic                 | Description                                                                 |
+|--------------------------|-----------------------|-----------------------|-----------------------------------------------------------------------------|
+| Sigmoid Function         | Mathematical Formula  | Transformation        | A function that maps any real-valued number to the range (0, 1). Used in logistic regression and neural networks. |
+| Sum of Squared Residuals | Residual Calculation  | Error Measurement     | A measure of the discrepancy between the observed data and the values predicted by a model. |
+| Standard Deviation       | Square Root of Variance| Dispersion Measurement| A measure of the amount of variation or dispersion in a set of values.       |
+ 
+## Data Processing
+| Name               | Method              | Logic         | Description                                                           |
+|--------------------|---------------------|---------------|-----------------------------------------------------------------------|
+| Standardize Column | Feature Scaling     | Normalization | Standardizes the column of a given dataset to have a mean of 0 and a standard deviation of 1. |
 
 
 
-## Algorithm Concept (High Level)
+## Machine Learning Algorithm
 
-## Logistic Regression
+### Logistic Regression
 1. Prepare, train test split
 2. Initialise Weights and Bias
 3. Compute Linear Combination
@@ -27,14 +42,14 @@ Welcome to the Algorithms repository! This repository logs my explorations, curi
 6. Update weights with gradient descent
 
 
-## Decision Tree
+### Decision Tree
 1. Prepare, train test split
 2. Start at root, recursively split based on best feature and threshold
 3. Use splitting criteria like Gini impurity or entrophy
 4. Stopping criteria (max depth or min split)
 
 
-## Random Forest
+### Random Forest
 1. Prepare, train test split
 2. Create multiple bootstrap samples 
 3. Build decision tree for each sample
@@ -43,7 +58,7 @@ Welcome to the Algorithms repository! This repository logs my explorations, curi
 
 ## Mathematical Formulas 
 
-## Gini Impurity
+### Gini Impurity
 For a dataset with $n$ classes, the Gini impurity is defined as:
 
 $$
